@@ -1,6 +1,6 @@
 #include"system.h"
 #include<libpic30.h>
-
+//prueba git
 int main ()
 {
     //configurando como entradas
