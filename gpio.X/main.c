@@ -1,6 +1,7 @@
 #include "system.h"
 #include <libpic30.h>
 
+//prueba terminada
 int main ()
 {
     TRISBbits.TRISB0 = 0;
