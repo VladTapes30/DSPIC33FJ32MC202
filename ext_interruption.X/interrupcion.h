@@ -11,8 +11,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-
+    
+void ext_int0_init();
+void ext_int1_init();
 
 
 #ifdef	__cplusplus

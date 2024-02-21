@@ -1,6 +1,9 @@
 
 #include <p33FJ32MC202.h>
 
+//declaracion de punteros a funcion
+void (*int0_int_head)(void);
+void (*int1_int_head)(void);
 
 void ext_int0_init()//inicializar la interrupcion
 {
@@ -32,7 +35,24 @@ void ext_int1_init()//inicializar la interrupcion
     IEC1bits.INT1IE    = 1;//encender interrupcion externa 0
 }
 
-void __attribute__ ((interrupt)) _INT0Interrupt (void)
+void __attribute__ ((interrupt,no_auto_psv)) _INT0Interrupt (void)
 {
-    
+ /*DESAHABILITAR EL PSV PARA QUE NO MANDE LA LITERAL A LA RAM
+  *
+  * void __attribute__ ((interrupt,no_auto_psv)) _INT0Interrupt (void)
+  */  
+   IFS0bits.INT0IF = 0; //reset para la siguiente interrupcion
+   //LATBbits.LATB0 = !LATBbits.LATB0;//OPCION SIN CALLBACK
+   int0_int_head();
+}
+
+void __attribute__ ((interrupt,no_auto_psv)) _INT1Interrupt (void)
+{
+   IFS1bits.INT1IF = 0; //reset para la siguiente interrupcion
+  // LATBbits.LATB1 = !LATBbits.LATB1;//OPCION SIN CALLBACK
+}
+
+void int0_set_int_head (void (*int0_head)(void))
+{
+    int0_int_head = int0_head;
 }

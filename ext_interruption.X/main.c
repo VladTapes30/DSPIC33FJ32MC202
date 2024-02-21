@@ -1,4 +1,5 @@
 #include"system.h"
+#include "interrupcion.h"
 #include<libpic30.h>
 #include <p33FJ32MC202.h>
 //prototipos
@@ -7,7 +8,14 @@ void led1_toogle();
 
 int main()
 {
+    //declarar como salida rbo rb1
+    TRISBbits.TRISB0 = 0;
+    TRISBbits.TRISB1 = 0;
     
+    ext_int0_init();//INICIA CONFI DE INT0
+    ext_int1_init();//INICIO CONFI DE INT1
+    
+    int0_set_int_head(led1_toogle);
     
     while(1)
     {
