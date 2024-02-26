@@ -1,8 +1,8 @@
 
 #include <p33FJ32MC202.h>
 
-//declaracion de punteros a funcion
-void (*int0_int_head)(void);
+//declaracion de punteros a funcion //manegadores
+void (*int0_int_head)(void); // void (*nom)(void);
 void (*int1_int_head)(void);
 
 void ext_int0_init()//inicializar la interrupcion
@@ -50,9 +50,15 @@ void __attribute__ ((interrupt,no_auto_psv)) _INT1Interrupt (void)
 {
    IFS1bits.INT1IF = 0; //reset para la siguiente interrupcion
   // LATBbits.LATB1 = !LATBbits.LATB1;//OPCION SIN CALLBACK
+   int1_int_head();
 }
 
 void int0_set_int_head (void (*int0_head)(void))
 {
     int0_int_head = int0_head;
+}
+
+void int1_set_int_head (void (*int1_head)(void))
+{
+    int1_int_head = int1_head;
 }
