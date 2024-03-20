@@ -11,9 +11,18 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    typedef enum
+    {
+        AN0,
+                AN1,
+                AN2,
+                AN3,
+                AN4,
+                AN5
+    }CHANNEL;
 //PROTOTIPOS
 void adc_init();
-uint16_t ADC_Read(int channel);
+uint16_t ADC_Read(CHANNEL channel);
 
 #ifdef	__cplusplus
 }

@@ -22,7 +22,7 @@ void adc_init()
     AD1CON1bits.ADON  = 1;//on adc   
 }
 
-uint16_t ADC_Read(int channel)//0--> an0
+uint16_t ADC_Read(CHANNEL channel)//0--> an0
 {
     AD1CHS0bits.CH0SA = channel;//elegir el canal
     AD1CON1bits.SAMP  = 1;//activar muestreo
