@@ -1,8 +1,10 @@
 #include "system.h"
 #include "ADC.h"
 #include <libpic30.h>
+
 float READ;
-uint16_t READ2;
+uint16_t READ2;//ESCALAR PARA ELIMMINAR EL PUNTO DECIMAL
+
 int main()
 {
     TRISB = 0x0000;
