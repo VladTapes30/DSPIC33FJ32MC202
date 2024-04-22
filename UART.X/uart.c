@@ -37,4 +37,8 @@ void UART_puts (char *s)
         UART_putc(*s++);
 }
 
+//char x;  char *p;
+//x = 5;   p = &x;
+//scanf("%d",&pedro);
+
 
