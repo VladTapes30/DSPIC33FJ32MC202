@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/multiV.X.production.elf">
+  <executable name="dist/default/production/uart_rx_tx.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>10</used>
-      <free>2038</free>
+      <used>106</used>
+      <free>1942</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>33024</length>
-      <used>1773</used>
-      <free>31251</free>
+      <used>6738</used>
+      <free>26286</free>
     </memory>
   </executable>
 </project>
