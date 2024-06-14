@@ -1,7 +1,8 @@
 #include "system.h"
+#include <p33FJ32MC202.h>
 #include "btn.h"
 #include <stdbool.h>
-#include <p33FJ32MC202.h>
+
 
 #define BTN1_TRIS  TRISBbits.TRISB2
 #define BTN2_TRIS  TRISBbits.TRISB3
@@ -34,6 +35,8 @@ void BTN_ENABLE(button btn)
             BTN2_TRIS = INPUT;
            // PU_BTN2   = PU_ENABLE;
             break;
+        case SW_NONE:
+            break;
     }
 }
 
@@ -42,10 +45,12 @@ bool btn_Ispressed(button btn)
     switch(btn)
     {
         case SW1:
-            return ((BTN1_PORT == BTN_PRESSED) ? true : false);
+            return (BTN1_PORT == BTN_PRESSED) ? true : false;
             
         case SW2:
-            return ((BTN2_PORT == BTN_PRESSED) ? true : false);
+            return (BTN2_PORT == BTN_PRESSED) ? true : false;
+        case SW_NONE:
+            break;
     }
-    return true;
+//    return true;
 }

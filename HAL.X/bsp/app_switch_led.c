@@ -1,14 +1,15 @@
-#include "../bsp/system.h"
-#include "app_switch_led.h"
+#include "system.h"
 #include "btn.h"
 #include "leds.h"
+#include "app_switch_led.h"
 #include <stdbool.h>
 
 void app_switch_led()
 {
     if (btn_Ispressed(SW1))
     {
-        LED_ENC(LGREEN);
+       // LED_ENC(LGREEN);
+        LATBbits.LATB0 = 1;
     }
     else
     {

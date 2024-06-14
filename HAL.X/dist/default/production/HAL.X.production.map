@@ -233,12 +233,12 @@ usercode
 
 __FBS             0xf80000          0x2
  *(__FBS.sec*)
- __FBS.sec        0xf80000          0x2 /CW/_FBS`>∆
+ __FBS.sec        0xf80000          0x2 /CW/_FBSpN—
                   0xf80000                  __FBS.sec
 
 __FGS             0xf80004          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf80004          0x2 /CW/_FGS∞é∆
+ __FGS.sec        0xf80004          0x2 /CW/_FGS¿û—
                   0xf80004                  __FGS.sec
 
 __FOSCSEL
@@ -271,12 +271,12 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000        0xd27
+.debug_info       0x000000        0xd5d
  *(.debug_info)
- .debug_info      0x000000        0x528 build/default/production/bsp/leds.o
- .debug_info      0x000528        0x4eb build/default/production/bsp/btn.o
- .debug_info      0x000a13        0x180 build/default/production/main.o
- .debug_info      0x000b93        0x194 build/default/production/bsp/app_switch_led.o
+ .debug_info      0x000000        0x530 build/default/production/bsp/leds.o
+ .debug_info      0x000530        0x4f5 build/default/production/bsp/btn.o
+ .debug_info      0x000a25        0x192 build/default/production/main.o
+ .debug_info      0x000bb7        0x1a6 build/default/production/bsp/app_switch_led.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x20e
@@ -287,13 +287,13 @@ __FUID3
  .debug_abbrev    0x00017c         0x4a build/default/production/main.o
  .debug_abbrev    0x0001c6         0x48 build/default/production/bsp/app_switch_led.o
 
-.debug_line       0x000000        0x306
+.debug_line       0x000000        0x30a
  *(.debug_line)
  .debug_line      0x000000         0x1a build/default/production/bsp/system.o
- .debug_line      0x00001a        0x128 build/default/production/bsp/leds.o
- .debug_line      0x000142        0x11e build/default/production/bsp/btn.o
- .debug_line      0x000260         0x4e build/default/production/main.o
- .debug_line      0x0002ae         0x58 build/default/production/bsp/app_switch_led.o
+ .debug_line      0x00001a        0x12b build/default/production/bsp/leds.o
+ .debug_line      0x000145        0x11f build/default/production/bsp/btn.o
+ .debug_line      0x000264         0x4e build/default/production/main.o
+ .debug_line      0x0002b2         0x58 build/default/production/bsp/app_switch_led.o
 
 .debug_frame      0x000000        0x106
  *(.debug_frame)
@@ -972,8 +972,8 @@ LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-elf.a
 END GROUP
 OUTPUT(dist/default/production/HAL.X.production.elf elf32-pic30)
-LOAD /CW/_FGS∞é∆
-LOAD /CW/_FBS`>∆
+LOAD /CW/_FGS¿û—
+LOAD /CW/_FBSpN—
 LOAD default_isr
 
 __c30_signature

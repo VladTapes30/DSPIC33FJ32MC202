@@ -23,7 +23,9 @@ void LED_ENABLE (COLOR_LED LED)
             break;
         case LRED:
             LED_RED_TRIS = OUTPUT;
-            break;           
+            break;     
+        case LNONE:
+            break;
     }
 }
 void LED_ENC (COLOR_LED LED)
@@ -37,6 +39,8 @@ void LED_ENC (COLOR_LED LED)
         case LRED:
             LED_RED_LAT   = LED_ON;
             break;
+        case LNONE:
+            break;
     }
 }
 void LED_APA (COLOR_LED LED)
@@ -48,6 +52,8 @@ void LED_APA (COLOR_LED LED)
             break;
         case LRED:
             LED_RED_LAT   = LED_OFF;
+            break;
+        case LNONE:
             break;
     }
 }

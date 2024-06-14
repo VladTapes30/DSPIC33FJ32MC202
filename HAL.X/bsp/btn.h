@@ -17,7 +17,8 @@ extern "C" {
     typedef enum
     {
         SW1,
-        SW2
+        SW2,
+                SW_NONE
     }button;
     
 void BTN_ENABLE(button btn);

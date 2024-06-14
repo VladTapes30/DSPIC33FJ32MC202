@@ -16,6 +16,7 @@ int main()
     while (1) 
     {
         app_switch_led();
+        
     }
     return 0;
 }

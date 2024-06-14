@@ -14,7 +14,9 @@ extern "C" {
     typedef enum
     {
         LGREEN,
-                LRED
+                LRED,
+                LNONE
+             
     }COLOR_LED;
 
 /*prototipos*/
