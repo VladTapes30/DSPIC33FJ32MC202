@@ -15,7 +15,7 @@ void adc_init()
     AD1CON1bits.SSRC  = 0b000;//elegir funte de clock
     AD1CON1bits.SAMP  = 0;//muestreo induvidual
     AD1CON2bits.VCFG  = 0b000;//voltajes de referencia
-    AD1CON2bits.CHPS  = 0b00;//channel 0 elegir
+    AD1CON2bits.CHPS  = 0b00;//channel elegido el 0
     AD1CON3bits.ADRC  = 0;//FUNTE DE CLOCK CONVERSION
     AD1CON3bits.ADCS  = 0b100;//velocidad de muestreo
     AD1CON1bits.ASAM  = 0;//MODO MANULA MUESTREO

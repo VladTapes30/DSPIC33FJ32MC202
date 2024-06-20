@@ -87,9 +87,9 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.text                        0x2ce                0xe6           0x159  (345)
+.text                        0x2ce               0x10e           0x195  (405)
 
-                 Total "program" memory used (bytes):          0x28e  (654) 1%
+                 Total "program" memory used (bytes):          0x2ca  (714) 2%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -116,25 +116,27 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init
                   0x000252                  __data_init_standard
+                  0x000252                  __data_init
                   0x0002c8                  __DefaultInterrupt
-                  0x0002ce                  _LED_ENABLE
-                  0x0002ea                  _LED_ENC
-                  0x000306                  _LED_APA
-                  0x000322                  _BTN_ENABLE
-                  0x00033e                  _btn_Ispressed
-                  0x000374                  _app_switch_led
-                  0x00039e                  _main
+                  0x0002ce                  _BTN_ENABLE
+                  0x0002ee                  _btn_Ispressed
+                  0x000328                  _LED_ENABLE
+                  0x000344                  _LED_ENC
+                  0x000360                  _LED_APA
+                  0x00037c                  _app_switch_led
+                  0x0003a8                  _SYSTEM_Initialize
+                  0x0003d2                  _main
                   0xf80000                  __FBS.sec
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000322                  _BTN_ENABLE
-                  0x000306                  _LED_APA
-                  0x0002ce                  _LED_ENABLE
-                  0x0002ea                  _LED_ENC
+                  0x0002ce                  _BTN_ENABLE
+                  0x000360                  _LED_APA
+                  0x000328                  _LED_ENABLE
+                  0x000344                  _LED_ENC
+                  0x0003a8                  _SYSTEM_Initialize
                   0x0002c8                  __DefaultInterrupt
                   0xf80000                  __FBS.sec
                   0xf80004                  __FGS.sec
@@ -142,9 +144,9 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000374                  _app_switch_led
-                  0x00033e                  _btn_Ispressed
-                  0x00039e                  _main
+                  0x00037c                  _app_switch_led
+                  0x0002ee                  _btn_Ispressed
+                  0x0003d2                  _main
 
 Memory Configuration
 
@@ -233,12 +235,12 @@ usercode
 
 __FBS             0xf80000          0x2
  *(__FBS.sec*)
- __FBS.sec        0xf80000          0x2 /CW/_FBSpN—
+ __FBS.sec        0xf80000          0x2 /CW/_FBS
                   0xf80000                  __FBS.sec
 
 __FGS             0xf80004          0x2
  *(__FGS.sec*)
- __FGS.sec        0xf80004          0x2 /CW/_FGS¿û—
+ __FGS.sec        0xf80004          0x2 /CW/_FGSê
                   0xf80004                  __FGS.sec
 
 __FOSCSEL
@@ -271,41 +273,43 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000        0xd5d
+.debug_info       0x000000       0x1022
  *(.debug_info)
- .debug_info      0x000000        0x530 build/default/production/bsp/leds.o
- .debug_info      0x000530        0x4f5 build/default/production/bsp/btn.o
- .debug_info      0x000a25        0x192 build/default/production/main.o
- .debug_info      0x000bb7        0x1a6 build/default/production/bsp/app_switch_led.o
+ .debug_info      0x000000        0x1e9 build/default/production/bsp/system.o
+ .debug_info      0x0001e9        0x530 build/default/production/bsp/leds.o
+ .debug_info      0x000719        0x5ef build/default/production/bsp/btn.o
+ .debug_info      0x000d08        0x174 build/default/production/main.o
+ .debug_info      0x000e7c        0x1a6 build/default/production/bsp/app_switch_led.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x20e
+.debug_abbrev     0x000000        0x273
  *(.debug_abbrev)
- .debug_abbrev    0x000000          0x1 build/default/production/bsp/system.o
- .debug_abbrev    0x000001         0xb1 build/default/production/bsp/leds.o
- .debug_abbrev    0x0000b2         0xca build/default/production/bsp/btn.o
- .debug_abbrev    0x00017c         0x4a build/default/production/main.o
- .debug_abbrev    0x0001c6         0x48 build/default/production/bsp/app_switch_led.o
+ .debug_abbrev    0x000000         0x66 build/default/production/bsp/system.o
+ .debug_abbrev    0x000066         0xb1 build/default/production/bsp/leds.o
+ .debug_abbrev    0x000117         0xca build/default/production/bsp/btn.o
+ .debug_abbrev    0x0001e1         0x4a build/default/production/main.o
+ .debug_abbrev    0x00022b         0x48 build/default/production/bsp/app_switch_led.o
 
-.debug_line       0x000000        0x30a
+.debug_line       0x000000        0x34c
  *(.debug_line)
- .debug_line      0x000000         0x1a build/default/production/bsp/system.o
- .debug_line      0x00001a        0x12b build/default/production/bsp/leds.o
- .debug_line      0x000145        0x11f build/default/production/bsp/btn.o
- .debug_line      0x000264         0x4e build/default/production/main.o
- .debug_line      0x0002b2         0x58 build/default/production/bsp/app_switch_led.o
+ .debug_line      0x000000         0x62 build/default/production/bsp/system.o
+ .debug_line      0x000062        0x12b build/default/production/bsp/leds.o
+ .debug_line      0x00018d        0x123 build/default/production/bsp/btn.o
+ .debug_line      0x0002b0         0x44 build/default/production/main.o
+ .debug_line      0x0002f4         0x58 build/default/production/bsp/app_switch_led.o
 
-.debug_frame      0x000000        0x106
+.debug_frame      0x000000        0x134
  *(.debug_frame)
- .debug_frame     0x000000         0x62 build/default/production/bsp/leds.o
- .debug_frame     0x000062         0x48 build/default/production/bsp/btn.o
- .debug_frame     0x0000aa         0x2e build/default/production/main.o
- .debug_frame     0x0000d8         0x2e build/default/production/bsp/app_switch_led.o
+ .debug_frame     0x000000         0x2e build/default/production/bsp/system.o
+ .debug_frame     0x00002e         0x62 build/default/production/bsp/leds.o
+ .debug_frame     0x000090         0x48 build/default/production/bsp/btn.o
+ .debug_frame     0x0000d8         0x2e build/default/production/main.o
+ .debug_frame     0x000106         0x2e build/default/production/bsp/app_switch_led.o
 
-.debug_str        0x000000         0x27
+.debug_str        0x000000         0x31
  *(.debug_str)
  .debug_str       0x000000         0x13 build/default/production/bsp/leds.o
- .debug_str       0x000013         0x14 build/default/production/bsp/btn.o
+ .debug_str       0x000013         0x1e build/default/production/bsp/btn.o
 
 .debug_loc
  *(.debug_loc)
@@ -314,30 +318,34 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0xac
+                  0x000000         0xd4
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x39 build/default/production/bsp/leds.o
+                  0x000000         0x28 build/default/production/bsp/system.o
  .debug_pubnames
-                  0x000039         0x33 build/default/production/bsp/btn.o
+                  0x000028         0x39 build/default/production/bsp/leds.o
  .debug_pubnames
-                  0x00006c         0x1b build/default/production/main.o
+                  0x000061         0x33 build/default/production/bsp/btn.o
  .debug_pubnames
-                  0x000087         0x25 build/default/production/bsp/app_switch_led.o
+                  0x000094         0x1b build/default/production/main.o
+ .debug_pubnames
+                  0x0000af         0x25 build/default/production/bsp/app_switch_led.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x60
+.debug_aranges    0x000000         0x78
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/bsp/leds.o
+                  0x000000         0x18 build/default/production/bsp/system.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/bsp/btn.o
+                  0x000018         0x18 build/default/production/bsp/leds.o
  .debug_aranges
-                  0x000030         0x18 build/default/production/main.o
+                  0x000030         0x18 build/default/production/bsp/btn.o
  .debug_aranges
-                  0x000048         0x18 build/default/production/bsp/app_switch_led.o
+                  0x000048         0x18 build/default/production/main.o
+ .debug_aranges
+                  0x000060         0x18 build/default/production/bsp/app_switch_led.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -972,37 +980,39 @@ LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-elf.a
 END GROUP
 OUTPUT(dist/default/production/HAL.X.production.elf elf32-pic30)
-LOAD /CW/_FGS¿û—
-LOAD /CW/_FBSpN—
+LOAD /CW/_FGSê
+LOAD /CW/_FBS
 LOAD default_isr
 
-__c30_signature
-                  0x000060         0x2a
- __c30_signature
-                  0x000060          0x6 build/default/production/bsp/system.o
- __c30_signature
-                  0x000066          0x6 build/default/production/bsp/leds.o
- __c30_signature
-                  0x00006c          0x6 build/default/production/bsp/btn.o
- __c30_signature
-                  0x000072          0x6 build/default/production/main.o
- __c30_signature
-                  0x000078          0x6 build/default/production/bsp/app_switch_led.o
- __c30_signature
-                  0x00007e          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
- __c30_signature
-                  0x000084          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
-
 .debug_pubtypes
-                  0x00008a         0xf5
+                  0x000078        0x137
  .debug_pubtypes
-                  0x00008a         0x69 build/default/production/bsp/leds.o
+                  0x000078         0x23 build/default/production/bsp/system.o
  .debug_pubtypes
-                  0x0000f3         0x68 build/default/production/bsp/btn.o
+                  0x00009b         0x69 build/default/production/bsp/leds.o
  .debug_pubtypes
-                  0x00015b         0x12 build/default/production/main.o
+                  0x000104         0x87 build/default/production/bsp/btn.o
  .debug_pubtypes
-                  0x00016d         0x12 build/default/production/bsp/app_switch_led.o
+                  0x00018b         0x12 build/default/production/main.o
+ .debug_pubtypes
+                  0x00019d         0x12 build/default/production/bsp/app_switch_led.o
+
+__c30_signature
+                  0x0001af         0x2a
+ __c30_signature
+                  0x0001af          0x6 build/default/production/bsp/system.o
+ __c30_signature
+                  0x0001b5          0x6 build/default/production/bsp/leds.o
+ __c30_signature
+                  0x0001bb          0x6 build/default/production/bsp/btn.o
+ __c30_signature
+                  0x0001c1          0x6 build/default/production/main.o
+ __c30_signature
+                  0x0001c7          0x6 build/default/production/bsp/app_switch_led.o
+ __c30_signature
+                  0x0001cd          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+ __c30_signature
+                  0x0001d3          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
 
 .config_JTAGEN    0xf8000e          0x2
  .config_JTAGEN
@@ -1022,15 +1032,17 @@ __c30_signature
 .config_IESO      0xf80006          0x2
  .config_IESO     0xf80006          0x2 build/default/production/bsp/system.o
 
-.text             0x0002ce         0xe6
- .text            0x0002ce         0x54 build/default/production/bsp/leds.o
-                  0x0002ce                  _LED_ENABLE
-                  0x0002ea                  _LED_ENC
-                  0x000306                  _LED_APA
- .text            0x000322         0x52 build/default/production/bsp/btn.o
-                  0x000322                  _BTN_ENABLE
-                  0x00033e                  _btn_Ispressed
- .text            0x000374         0x2a build/default/production/bsp/app_switch_led.o
-                  0x000374                  _app_switch_led
- .text            0x00039e         0x16 build/default/production/main.o
-                  0x00039e                  _main
+.text             0x0002ce        0x10e
+ .text            0x0002ce         0x5a build/default/production/bsp/btn.o
+                  0x0002ce                  _BTN_ENABLE
+                  0x0002ee                  _btn_Ispressed
+ .text            0x000328         0x54 build/default/production/bsp/leds.o
+                  0x000328                  _LED_ENABLE
+                  0x000344                  _LED_ENC
+                  0x000360                  _LED_APA
+ .text            0x00037c         0x2c build/default/production/bsp/app_switch_led.o
+                  0x00037c                  _app_switch_led
+ .text            0x0003a8         0x2a build/default/production/bsp/system.o
+                  0x0003a8                  _SYSTEM_Initialize
+ .text            0x0003d2          0xa build/default/production/main.o
+                  0x0003d2                  _main

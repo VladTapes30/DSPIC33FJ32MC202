@@ -6,15 +6,14 @@
 
 void app_switch_led()
 {
-    if (btn_Ispressed(SW1))
+    if (btn_Ispressed(SW1) == 0)
     {
-       // LED_ENC(LGREEN);
-        LATBbits.LATB0 = 1;
+        LED_ENC(LGREEN);
     }
     else
     {
         LED_APA(LGREEN);
     }
     /*ES LO MISMO SOLO QUE UTILIZANDO OPERADORES*/
-    (btn_Ispressed(SW2)) ? LED_ENC(LRED) : LED_APA(LRED);
+    (btn_Ispressed(SW2)) ? LED_APA(LRED) : LED_ENC(LRED);
 }

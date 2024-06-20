@@ -1,4 +1,7 @@
 
+#include "leds.h"
+#include "system.h"
+#include "btn.h"
 // DSPIC33FJ32MC202 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -41,4 +44,23 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-
+void SYSTEM_Initialize(SYSTEM_STATE state)
+{
+    switch(state)
+    {
+        case POLLING:         
+            /*INICIALIZANDO BOTONES*/
+            BTN_ENABLE(SW1);
+            BTN_ENABLE(SW2);
+            /*INICIALIZANDO LEDS*/
+            LED_ENABLE(LRED);
+            LED_ENABLE(LGREEN);
+            /*AL INICIO QUIERO TODOS LOS LED APAGADOS*/
+            LED_APA(LGREEN);
+            LED_APA(LRED);
+            break;
+            
+        case INTERRUPTION:
+            break;
+    }
+}

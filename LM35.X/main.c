@@ -18,7 +18,7 @@ int main()
     adc_init();
     UART_init();
     
-    //TRISB = 0x0000;
+    
     while (1) 
     {
         lm35_adc.Ladc = ADC_Read(AN0);

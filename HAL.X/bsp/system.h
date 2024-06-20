@@ -18,7 +18,13 @@ extern "C" {
 #include<xc.h>          //esta es la biblioteca del cristal
 #include <libpic30.h>
 
-
+    typedef enum
+    {
+        POLLING,
+                INTERRUPTION
+    }SYSTEM_STATE;
+    
+    void SYSTEM_Initialize(SYSTEM_STATE state);
 #ifdef	__cplusplus
 }
 #endif

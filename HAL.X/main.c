@@ -6,17 +6,10 @@
 
 int main()
 {
-    /*INICIALIZANDO BOTONES*/
-    BTN_ENABLE(SW1);
-    BTN_ENABLE(SW2);
-    /*INICIALIZANDO LEDS*/
-    LED_ENABLE(LRED);
-    LED_ENABLE(LGREEN);
-            
+    SYSTEM_Initialize(POLLING);
     while (1) 
     {
         app_switch_led();
-        
     }
     return 0;
 }
