@@ -3,7 +3,6 @@
 #include "btn.h"
 #include <stdbool.h>
 
-
 #define BTN1_TRIS  TRISBbits.TRISB5 //CAMBIO POR LA SIMULACION
 #define BTN2_TRIS  TRISBbits.TRISB6
 

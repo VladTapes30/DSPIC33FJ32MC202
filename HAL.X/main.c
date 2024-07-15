@@ -9,7 +9,7 @@ int main()
     SYSTEM_Initialize(POLLING);
     while (1) 
     {
-        app_switch_led();
+        app_switch_led();   
     }
     return 0;
 }
